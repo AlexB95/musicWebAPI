@@ -1,5 +1,5 @@
-module.exports = function (env) {
-  switch (env) {
+module.exports = function () {
+  switch (process.env.NODE_ENV) {
     case 'local':
       return {
         'url': 'mongodb://localhost:27017/MyMusic',
@@ -8,9 +8,9 @@ module.exports = function (env) {
         }
       }
       break;
-    case 'Atlas':
+    case 'dev':
       return {
-        'url': '"mongodb+srv://kay:myRealPassword@cluster0.mongodb.net/test"',
+        'url': 'mongodb://music:uVaLvvjkshHgzYSB@ds115124.mlab.com:15124/heroku_dkk0w1ph',
         options: {
           useMongoClient: true
         }
@@ -20,3 +20,5 @@ module.exports = function (env) {
 }
 
 //SET NODE_ENV=local
+
+//uVaLvvjkshHgzYSB
