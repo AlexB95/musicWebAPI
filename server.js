@@ -5,7 +5,7 @@ var express      = require('express'),
     router          = require('./routes'),
     databaseConfig  = require('./config/database');
 
-var connection = mongoose.connect(databaseConfig('local').url);
+var connection = mongoose.connect(databaseConfig('Atlas').url);
 
 console.log(mongoose.connection.readyState);
 
