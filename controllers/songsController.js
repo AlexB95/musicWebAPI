@@ -11,7 +11,7 @@ exports.getSongs = function (req, res, next) {
 
 exports.createSong = function (req, res, next) {
 
-    var images = req.body.album.images;
+    var images = req.body.album.id;
     var title = req.body.name;
     var artist = req.body.artists.name;
     var preview_url = req.body.preview_url;
