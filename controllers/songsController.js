@@ -11,12 +11,13 @@ exports.getSongs = function (req, res, next) {
 
 exports.createSong = function (req, res, next) {
 
+    var images = req.body.album.images;
     var title = req.body.name;
     var artist = req.body.artists.name;
     var preview_url = req.body.preview_url;
-    var image_small = req.body.album.images[2].url;
-    var image_medium = req.body.album.images[1].url;
-    var image_large = req.body.album.images[0].url;
+    var image_small = images[2].url;
+    var image_medium = images[1].url;
+    var image_large = images[0].url;
     var open_url = req.body.external_urls.spotify;
     var song_id = req.body.id;
     if (!title) {
