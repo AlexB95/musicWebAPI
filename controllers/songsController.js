@@ -65,7 +65,7 @@ exports.createSong = function (req, res, next) {
 exports.deleteSong = function (req, res, next) {
 
     Song.remove({
-        _id: req.params.song_id
+        song_id: req.params.song_id
     }, function (err, song) {
         res.json(song);
     });
