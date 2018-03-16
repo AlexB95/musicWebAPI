@@ -11,14 +11,14 @@ exports.getSongs = function (req, res, next) {
 
 exports.createSong = function (req, res, next) {
 
-    var title = req.body.title;
-    var artist = req.body.artist;
+    var title = req.body.name;
+    var artist = req.body.artists.name;
     var preview_url = req.body.preview_url;
-    var image_small = req.body.image_small;
-    var image_medium = req.body.image_medium;
-    var image_large = req.body.image_large;
-    var open_url = req.body.open_url;
-    var song_id = req.body.song_id;
+    var image_small = req.body.album.images[2].url;
+    var image_medium = req.body.album.images[1].url;
+    var image_large = req.body.album.images[0].url;
+    var open_url = req.body.external_urls.spotify;
+    var song_id = req.body.id;
     if (!title) {
         return res.status(400).send({
             error: 'You must enter a title'
