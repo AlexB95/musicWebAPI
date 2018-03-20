@@ -5,7 +5,7 @@ exports.getSongs = function (req, res, next) {
         if (err) {
             res.send(err);
         }
-        res.json(songs);
+        res.json({'songs':songs});
     });
 }
 
