@@ -12,7 +12,7 @@ exports.getSongs = function (req, res, next) {
 exports.createSong = function (req, res, next) {
 
     var title = req.body.name;
-    var artist = req.body.artists.name;
+    var artist = req.body.artists[0].name;
     var preview_url = req.body.preview_url;
     var image_small = req.body.album.images[2].url;
     var image_medium = req.body.album.images[1].url;
