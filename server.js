@@ -7,7 +7,11 @@ var express      = require('express'),
 
 var connection = mongoose.connect(databaseConfig().url);
 
-console.log(mongoose.connection.readyState);
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 app.listen(process.env.PORT || 8080);
 console.log("App listening on port 8080");
